@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PagedList, Version=1.1.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\References\PagedList - 1.1\PagedList.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
@@ -49,8 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountMembershipService.cs" />
     <Compile Include="AspNetMembershipProviderWrapper.cs" />
     <Compile Include="AspNetRoleProviderWrapper.cs" />
+    <Compile Include="FormsAuthentication.cs" />
+    <Compile Include="IMembershipService.cs" />
+    <Compile Include="IPagedList.cs" />
     <Compile Include="IPasswordService.cs" />
     <Compile Include="IRolesService.cs" />
     <Compile Include="IUserService.cs" />

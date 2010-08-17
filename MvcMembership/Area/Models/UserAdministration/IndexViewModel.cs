@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Web.Security;
-using PagedList;
 
 namespace MvcMembership.Area.Models.UserAdministration
 {

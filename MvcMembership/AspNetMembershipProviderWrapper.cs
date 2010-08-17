@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Security;
-using PagedList;
 
 namespace MvcMembership
 {
@@ -42,7 +42,7 @@ namespace MvcMembership
 			return usersPagedList;
 		}
 
-		public IPagedList<MembershipUser> FindByEmail(string emailAddressToMatch, int pageIndex, int pageSize)
+		public IEnumerable<MembershipUser> FindByEmail(string emailAddressToMatch, int pageIndex, int pageSize)
 		{
 			// get one page of users
 			int totalUserCount;
@@ -122,5 +122,11 @@ namespace MvcMembership
 		}
 
 		#endregion
+
+	    public void ChangePassword(MembershipUser membershipUser, string newPassword) 
+        {
+            string tempPassword = membershipUser.ResetPassword();
+            membershipUser.ChangePassword(tempPassword, newPassword);
+	    }
 	}
 }

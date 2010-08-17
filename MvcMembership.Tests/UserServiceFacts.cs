@@ -321,5 +321,21 @@ namespace MvcMembership.Tests
 		}
 
 		#endregion
+
+        [Fact]
+        public void CanSetPassword() 
+        {
+            string tempPassword = "TEST323";
+            string newPassword = "TEST468";
+
+            _user.Setup(u => u.ResetPassword()).Returns(tempPassword);
+            _user.Setup(u => u.ChangePassword(tempPassword, newPassword)).Verifiable();
+
+            var service = new AspNetMembershipProviderWrapper(_membershipProvider.Object);
+
+            service.ChangePassword(_user.Object, newPassword);
+
+            _user.Verify();
+        }
 	}
 }
